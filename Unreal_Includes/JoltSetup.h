@@ -51,8 +51,13 @@ JOLTUNREAL_API void JoltFree(void *inBlock)
 	FMemory::Free(inBlock);
 }
 
+JOLTUNREAL_API void JoltAlignedFree(void *inBlock)
+{
+	FMemory::Free(inBlock);
+}
+
 static void InitializeJolt()
-{	
+{
 	verify(JPH::VerifyJoltVersionID());
 
 	// This needs to be done before any other Jolt function is called
@@ -60,7 +65,7 @@ static void InitializeJolt()
 	JPH::Reallocate = &JoltRealloc;
 	JPH::Free = &JoltFree;
 	JPH::AlignedAllocate = &JoltAlignedAlloc;
-	JPH::AlignedFree = &JoltFree;
+	JPH::AlignedFree = &JoltAlignedFree;
 
 	// Install trace and assert callbacks
 	JPH::Trace = &JoltTrace;
