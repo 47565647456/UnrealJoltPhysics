@@ -100,8 +100,6 @@ public class LibJolt : ModuleRules
         
         PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "Jolt"));
         PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Unreal_Includes"));
-        
-        
 
         string DependencyPath = PublicRuntimeLibraryPaths.Last();
         DirectoryInfo d = new DirectoryInfo(@DependencyPath.Replace("\"", ""));
