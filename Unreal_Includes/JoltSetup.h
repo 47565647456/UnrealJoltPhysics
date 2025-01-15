@@ -3,7 +3,7 @@
 
 #include "Unreal_Includes/JoltCommon.h"
 
-#include "Log/JoltLog.h"
+#include "JoltLog.h"
 
 static void JoltTrace(const char* inFMT, ...)
 {
